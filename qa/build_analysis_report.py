@@ -221,9 +221,23 @@ branch.alignment = WD_ALIGN_PARAGRAPH.CENTER
 branch.paragraph_format.space_before = Cm(1)
 set_run_font(branch.add_run("Исходная ветка ошибки человечества\nИсправленная ветка codex/fixed-human-errors"), size=13)
 
+author = doc.add_paragraph()
+author.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+author.paragraph_format.left_indent = Cm(8.5)
+author.paragraph_format.space_before = Cm(2)
+author.paragraph_format.space_after = Pt(0)
+set_run_font(
+    author.add_run(
+        "Выполнил: [ФИО студента]\n"
+        "Группа: [номер группы]\n"
+        "Проверил: [ФИО преподавателя]"
+    ),
+    size=13,
+)
+
 year = doc.add_paragraph()
 year.alignment = WD_ALIGN_PARAGRAPH.CENTER
-year.paragraph_format.space_before = Cm(7)
+year.paragraph_format.space_before = Cm(3.5)
 set_run_font(year.add_run(str(date.today().year)), size=14)
 doc.add_page_break()
 
