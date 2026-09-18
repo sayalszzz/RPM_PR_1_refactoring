@@ -43,3 +43,4 @@ build/
 qa/report-render-*/
 qa/presentation_build/
 .chart-data-*/
+~$*
