@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com" xmlns:fx="http://javafx.com" fx:controller="com.example.rpm_pr_1.controller.GradeController">
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+    <Label text="Учет студентов и успеваемости" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <TableView fx:id="studentTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colName" text="ФИО" prefWidth="200"/>
+                    <TableColumn fx:id="colGroup" text="Группа" prefWidth="100"/>
+                    <TableColumn fx:id="colAvgGrade" text="Средний балл" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+        <VBox spacing="20" prefWidth="300">
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-border-radius: 5;">
+                <Label text="Добавить студента" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtStudentName" promptText="ФИО студента"/>
+                <TextField fx:id="txtGroupName" promptText="Группа"/>
+                <Button text="Добавить" onAction="#handleAddSubject" maxWidth="Infinity"/>
+            </VBox>
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-border-radius: 5;">
+                <Label text="Добавить предмет" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtSubjectTitle" promptText="Предмет"/>
+                <Button text="Добавить" onAction="#handleAddSubject" maxWidth="Infinity"/>
+            </VBox>
+            <VBox spacing="5" style="-fx-border-color: #ccc; -fx-padding: 10; -fx-border-radius: 5;">
+                <Label text="Поставить оценку" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="comboStudents" promptText="Студент" maxWidth="Infinity"/>
+                <ComboBox fx:id="comboSubjects" promptText="Предмет" maxWidth="Infinity"/>
+                <TextField fx:id="txtGradeValue" promptText="Оценка"/>
+                <Button text="Сохранить оценку" onAction="#handleAddGrade" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>
